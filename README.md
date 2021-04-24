@@ -12,11 +12,7 @@ Then, run the [main.py](main.py) script.
 
 This is a video demonstrating how PyGAD plays the flappy bird game.
 
-![](others/FlappyBirdPyGAD.mp4)
 
+https://user-images.githubusercontent.com/16560492/115970766-9869d880-a512-11eb-9ade-3403e0a62317.mp4
 
-
-<video width="640" height="420" controls>
-  <source src="others/FlappyBirdPyGAD.mp4" type="video/mp4">
-</video>
 
