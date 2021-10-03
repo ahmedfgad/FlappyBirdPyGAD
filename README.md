@@ -15,4 +15,8 @@ This is a video demonstrating how PyGAD plays the flappy bird game.
 
 https://user-images.githubusercontent.com/16560492/115970766-9869d880-a512-11eb-9ade-3403e0a62317.mp4
 
+Another video where the game is faster.
+
+https://user-images.githubusercontent.com/16560492/135771690-7e1f89e6-25de-4ba7-8910-9903b71e3bb3.mp4
+
 Note that the original game is taken from [this link](https://codewithharry.com/videos/python-tutorials-for-absolute-beginners-122). It was edited to make it sitable for use with PyGAD.
