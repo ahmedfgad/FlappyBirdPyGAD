@@ -53,9 +53,14 @@ def closest_pipe(playerx, pipes):
     else:
         return 1
 
-def fitness_func(solution, solution_idx):
+def fitness_func(ga_instance, solution, solution_idx):
     global playery, pipeHeight, playerx, upperPipes, lowerPipes, GAME_SPRITES, GROUNDY
-    
+
+    if type(solution) is int:
+        pass
+    else:
+        solution = solution[0]
+
     if solution < 0:
         return -8888
 
@@ -207,9 +212,9 @@ def isCollide(playerx, playery, upperPipes, lowerPipes):
     pygad_thread = PygadThread()
     pygad_thread.run()
 
-    # print(playery, fitness_func(playery, 0))
+    # print(playery, fitness_func(None, playery, 0))
     if playery > GROUNDY - 25  or playery < 0:
-        print("Ground", playery, fitness_func(playery, 0))
+        print("Ground", playery, fitness_func(None, playery, 0))
         # If the player hit the upper part of the screen.
         GAME_SOUNDS['hit'].play()
         return True
@@ -217,13 +222,13 @@ def isCollide(playerx, playery, upperPipes, lowerPipes):
     for pipe in upperPipes:
         pipeHeight = GAME_SPRITES['pipe'][0].get_height()
         if(playery < pipeHeight + pipe['y'] and abs(playerx - pipe['x']) < GAME_SPRITES['pipe'][0].get_width()):
-            print("Upper", playery, fitness_func(playery, 0))
+            print("Upper", playery, fitness_func(None, playery, 0))
             GAME_SOUNDS['hit'].play()
             return True
 
     for pipe in lowerPipes:
         if (playery + GAME_SPRITES['player'].get_height() > pipe['y']) and abs(playerx - pipe['x']) < GAME_SPRITES['pipe'][0].get_width():
-            print("Lower", playery, fitness_func(playery, 0))
+            print("Lower", playery, fitness_func(None, playery, 0))
             GAME_SOUNDS['hit'].play()
             return True
 
